@@ -51,6 +51,12 @@
                             <img src="static/DataIsPeople.jpg" width="70%">
                             <figcaption>Data Is People by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                         </figure>
+                        <aside data-markdown class="notes">
+                            - Research uses data
+                            - Research can produce results that benefit society
+                            - However, a lot of data is unavailable for research because of (absolutely justified) privacy concerns
+                            - This means we miss out on benefit
+                        </aside>
                     </section>
                     <section>
                         <figure>
@@ -58,9 +64,6 @@
                             <figcaption>Data Are People by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                         </figure>
                     </section>
-                    <aside data-markdown class="notes">
-                        - notes
-                    </aside>
                 </section>
                 <section>
                     <h3>Why TREs?</h3>
@@ -69,7 +72,11 @@
                         <figcaption>Sensitive Data by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                     </figure>
                     <aside data-markdown class="notes">
-                        - notes
+                        - A solution to that conflict
+                        - Better (more secure) than sharing data with individuals/teams
+                            - Can't leave a TRE on the train
+                            - Potential for standards and accreditation
+                            - Trust is more distributed (5 safes model?)
                     </aside>
                 </section>
                 <section>
@@ -88,7 +95,10 @@
                         <figcaption>Data Safe Haven by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                     </figure>
                     <aside data-markdown class="notes">
-                        - code
+                        - IAC defined TRE
+                            - reproducible
+                            - configurable
+                        - Tiered access controls
                     </aside>
                 </section>
                 <section>
@@ -98,9 +108,9 @@
                         <figcaption>Share Work by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                     </figure>
                     <aside data-markdown class="notes">
+                        - Open documentation and processes
                         - Papers
                         - SATRE
-                        - Docs?
                     </aside>
                 </section>
                 <section>
@@ -112,6 +122,7 @@
                     <aside data-markdown class="notes">
                         - DSGs
                         - Projects
+                        - Used in production outside The Turing, Nottingham (NHS SDE), Exeter
                         - Handled diverse data
                             - medical
                             - financial
@@ -121,7 +132,11 @@
                 <section>
                     <h3>Genesis</h3>
                     <aside data-markdown class="notes">
-                        - notes
+                        - DSGs using sensitive data
+                        - Poor experience with existing TREs
+                            - Lack of essential software (Python, PyPI)
+                            - Difficult to be productive
+                            - Hampered achievements
                     </aside>
                 </section>
                 <section>
@@ -134,9 +149,10 @@
                             To <b>balance</b> security with <b>productivity</b>.
                         </blockquote>
                         <aside data-markdown class="notes">
-                            - original goal
-                            - To create an environment we could use for world class data science
+                            - Original goal, based on DSG experience
+                            - To create a secure environment we could use for world class data science
                             - To balance security with productivity
+                            - Solving our own problem
                         </aside>
                     </section>
                     <section>
@@ -146,6 +162,10 @@
                             of interoperable foundational <b>infrastructure and governance</b>.
                         </blockquote>
                         <aside data-markdown class="notes">
+                            - As the project has progressed we have become more community minded
+                                - Trying to solve the larger problems
+                                - Through the design of our work
+                                - But also through contribution to community projects
                             - North star
                         </aside>
                     </section>
@@ -158,14 +178,30 @@
                 </section>
                 <section>
                     <h3>Security maximalism</h3>
+                    <figure>
+                        <img src="static/code-review-directions-without-text-only.jpg" width="70%">
+                        <figcaption>Code Review Directions by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
+                    </figure>
                     <aside data-markdown class="notes">
-                        - notes
+                        - We need to handle sensitive data with care and respect
+                        - It is tempting to do everything you can do increase security
+                        - However
+                            - these improvements may hamper work
+                            - not all improvements are significant/worthwhile (security theatre)
+                                - _e.g._ periodic password reset
                     </aside>
                 </section>
                 <section>
                     <h3>The reality</h3>
+                    <figure>
+                        <img src="static/open-vs-close-research.jpg" width="70%">
+                        <figcaption>Open vs Closed Research by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
+                    </figure>
                     <aside data-markdown class="notes">
-                        - notes
+                        - **You cannot eliminate risk**
+                        - Every piece of work is a negotiation about what _acceptable_ risk is
+                        - Remember, there is value to the work otherwise you wouldn't do it at all
+                        - You need to balance the value of the outputs with the risk (severity likelihood) of disclosure
                     </aside>
                 </section>
                 <section>
@@ -228,6 +264,7 @@
                     <h2>What is real security?</h2>
                     <h2>Trusted research wisdom</h2>
                     <h2 class="fragment custom highlight-my-green">Enabling researchers</h2>
+                </section>
                 <section>
                     <h3>Batteries included workspace</h3>
                     <aside data-markdown class="notes">
@@ -249,6 +286,10 @@
                 </section>
                 <section>
                     <h3>Develop outside, run inside</h3>
+                    <figure>
+                        <img src="static/code-publication.jpg" width="70%">
+                        <figcaption>Code Publication by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
+                    </figure>
                     <aside data-markdown class="notes">
                         - notes
                     </aside>
