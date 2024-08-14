@@ -222,11 +222,16 @@
                     </figure>
                     <aside data-markdown class="notes">
                         - We need to handle sensitive data with care and respect
-                        - It is tempting to do everything you can do increase security
-                        - However
-                            - these improvements may hamper work
-                            - not all improvements are significant/worthwhile (security theatre)
+                        - It is therefore tempting to do everything you can do increase security
+                        - If you can improve security, why wouldn't you?
+                        - However,
+                            - Not all improvements are significant (security theatre)
                                 - _e.g._ periodic password reset
+                            - These improvements may hamper work
+                            - Some may even cause more harm than good
+                                - Extra maintenance burden
+                                - Extra admin burden
+                                - Loss of productivity
                     </aside>
                 </section>
                 <section>
@@ -237,9 +242,9 @@
                     </figure>
                     <aside data-markdown class="notes">
                         - **You cannot eliminate risk**
-                        - Every piece of work is a negotiation about what _acceptable_ risk is
+                        - Every piece of work starts with a negotiation about what _acceptable_ risk is
                         - Remember, there is value to the work otherwise you wouldn't do it at all
-                        - You need to balance the value of the outputs with the risk (severity likelihood) of disclosure
+                        - You need to balance the value of the outputs with the risk of disclosure
                     </aside>
                 </section>
                 <section>
@@ -250,10 +255,16 @@
                 </section>
                 <section>
                     <h3>One size does not fit all</h3>
+                    <p><b>No single security configuration</b> for all work</p>
+                    <p>One configuration = <b>the most strict</b></p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Set of <b>security tiers</b> with <b>technical and policy controls</b></p>
+                    </div>
                     <aside data-markdown class="notes">
-                        - There is no single set of security rules for all work
+                        - There is no single set of security rules suitable for all work
                         - If you only have one, it will be for the most sensitive data you handle
-                        - Everyone else will suffer
+                        - Everyone else will suffer from unnecessary restrictions
                         - In DSH:
                             - We have created a set of tiers which apply to workpackages of different sensitivities
                             - These tiers work for us, but others will likely want to establish a different set
@@ -262,24 +273,43 @@
                 </section>
                 <section>
                     <h3>Egress is worse than ingress</h3>
+                    <p>New data can <b>elevate risk</b></p>
+                    <p><i>E.g.</i> key to re-identify individuals</p>
+                    <p>Top priority: prevent <b>unapproved data egress</b></p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Work package classification</p>
+                        <p>Expectations for user training and behaviour</p>
+                    </div>
                     <aside data-markdown class="notes">
-                        - Fundamentally, you want to prevent unapproved data disclosure
                         - Bringing data in could elevate risk/sensitivity (for example a key to reidentify individuals in a psuedonymised data set)
+                        - Fundamentally, you want to prevent unapproved data disclosure
                         - However, if your environment is secure, the disclosure is extremely limited (to only people with access)
+                        - You can distribute risk following the 5 Safes framework
                         - In DSH:
-                            - Data ingress and egress both require a review and sign off
-                            - We defined work packages, which are not just input data but _all_ input data and the intended outputs
+                            - We define (holistic) work packages, which are not just input data but _all_ input data and the intended outputs
                             - Assess risk in advance to avoid surprises (maybe this is a different lesson, plan ahead?)
-                            - Traditionally concerned about what effect data ingress may have
+                            - We set out expectations for users training and behaviour
+                              We share this in our open documentation
                     </aside>
                 </section>
                 <section>
                     <h3>Vulnerability is not the same in a TRE</h3>
+                    <p>CVE scores don't apply well to TREs</p>
+                    <p>Even malicious code may not present a significant risk</p>
+                    <p>Should be <b>robust to privilege escalation</b> and bad actors</p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Data flow is blocked at an infrastructure level</p>
+                        <p>Allow packages from CRAN and PyPI</p>
+                        <p>Read-only Git mirrors</p>
+                    </div>
                     <aside data-markdown class="notes">
                         - Donald Scobbie's (EPCC) way of thinking
                         - Existing ways of assessing threat like CVE don't apply well to TREs
                         - Network exploits, for example, are likely of no concern as there will be no way to use them
                         - Bringing in malicious code isn't much of a concern if the worst you can do is trash your workspace
+                        - A TRE should be robust to privilege escalation and bad actors
                         - In DSH:
                             - Originally created (limited) mirrors of CRAN and PyPI
                             - We allow packages from CRAN/PyPI proxy and git mirror
@@ -294,28 +324,21 @@
                     </aside>
                 </section>
                 <section>
-                    <h3>Trust your experience</h3>
-                    <aside data-markdown class="notes">
-                        - Data owners can have a skewed impression of risk
-                        - May ask for specific, overbearing restrictions/requirements
-                        - Often request higher security than is necessary
-                            - Again, the security maximalist approach
-                            - Why accept less than the most?
-                        - If you operate a TRE, *you* are an expert
-                        - In DSH:
-                            - We have found providers who greatly overestimate the security needed
-                            - Explain how restrictions hinder work
-                            - Arrive at a more reasonable set of controls and make work more productive
-                    </aside>
-                </section>
-                <section>
                     <h3>Certifications are not security</h3>
+                    <p>Certifications <b>don't</b> make a system a TRE</p>
+                    <p>May <b>distract</b> from what is important</p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p><a href="https://www.dsptoolkit.nhs.uk/">Data Security and Protection Toolkit</a> (NHS)</p>
+                        <p>Interestested in <b>ISO27001</b>/ISO27000 family</p>
+                        <p><b>SATRE</b></p>
+                    </div>
                     <aside data-markdown class="notes">
-                        - Related to last point
                         - Data owners may ask for specific certifications
                         - These are often a good sign of following best practice
                         - However, they do not constitute a guarantee of security and they do not ensure the kinds of processes/controls necessary for a safe TRE
-                        - Focusing your requirements for a TRE on a certification is unhelpful, and possibly dangerous. It distracts from the actual essential qualities of a TRE.
+                        - Focusing your requirements for a TRE on a certification is unhelpful, and possibly dangerous.
+                          It distracts from the actual essential qualities of a TRE.
                         - In DSH:
                             - No ISO27001 (yet).
                             - DSPT which is necessary for handling NHS data
@@ -330,6 +353,14 @@
                 </section>
                 <section>
                     <h3>Technical controls are not sufficient</h3>
+                    <p><b>Technical</b> solutions for a <b>people</b> problem</p>
+                    <p>There is no technology to prevent disclosure</p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p><b>Fairly trivial</b> data ingress</p>
+                        <p>Cannot prevent (<b>inefficient</b>) data egress</p>
+                        <p>Technical controls in <b>combination</b> with policy</p>
+                    </div>
                     <aside data-markdown class="notes">
                         - There is a tendency for people to ask/imagine/wish for a technical solution to a people problem
                         - Ultimately, we cannot prevent disclosure with technology
@@ -347,40 +378,51 @@
                             - We use both policy and technical controls
                             - We make our approach open through DSH documentation, and the documentation of our production TRE service
                             - We are happy for others to use, modify, contribute to these
-                            - Our only known data incident involving unauthorised egress was a researcher taking a screenshot of a graph to use in a presentation. (Check if we are happy to be open about this) Link to
+                            - Data incidents(?)
                     </aside>
                 </section>
-                <section>
-                    <h3>Technology is not your biggest risk</h3>
-                    <aside data-markdown class="notes">
-                        - There is, _I think_, an unhelpful impression that computers are the weak link
-                        - We imagine hacks being the product of geniuses exploiting obscure bugs
-                        - In reality:
-                            - case - Social engineering attack (Apple images? Amazon?)
-                            - Convincing a busy/stressed sysadmin that you are someone else might only take a phone call
-                            - case - BL hack NHS hacks, not some new vulnerability, widely known vulnerabilities exploited in old (out of support) systems.
-                            - Although there are exploits here, someone made (possibly forced) to defer maintenance.
-                        - Lessons:
-                            - No number of layers of technical work can protect from social engineering
-                            - We always need to put trust in people (think safe people)
-                            - Even in a zero-trust environment (where admins cannot see sensitive data) there is someone who can grant access
-                            - Policy/processes are critically important here as well as creating an environment where your admins feel confident and supported in enforcing them.
-                    </aside>
-                </section>
+                <!-- <section> -->
+                <!--     <h3>Technology is not your biggest risk</h3> -->
+                <!--     <aside data-markdown class="notes"> -->
+                <!--         - There is, _I think_, an unhelpful impression that computers are the weak link -->
+                <!--         - We imagine hacks being the product of geniuses exploiting obscure bugs -->
+                <!--         - In reality: -->
+                <!--             - case - Social engineering attack (Apple images? Amazon?) -->
+                <!--             - Convincing a busy/stressed sysadmin that you are someone else might only take a phone call -->
+                <!--             - case - BL hack NHS hacks, not some new vulnerability, widely known vulnerabilities exploited in old (out of support) systems. -->
+                <!--             - Although there are exploits here, someone made (possibly forced) to defer maintenance. -->
+                <!--         - Lessons: -->
+                <!--             - No number of layers of technical work can protect from social engineering -->
+                <!--             - We always need to put trust in people (think safe people) -->
+                <!--             - Even in a zero-trust environment (where admins cannot see sensitive data) there is someone who can grant access -->
+                <!--             - Policy/processes are critically important here as well as creating an environment where your admins feel confident and supported in enforcing them. -->
+                <!--     </aside> -->
+                <!-- </section> -->
                 <section>
                     <h3>Communication solves problems</h3>
+                    <p>Data owners can have a <b>skewed impression</b> of risk</p>
+                    <p><b>Security maximalist</b> approach</p>
+                    <p>If you run a TRE, <b>you are</b> an expert</p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Explain the trade off between <b>security</b> and <b>productivity</b></p>
+                        <p>Aim to find a good <b>balance</b></p>
+                    </div>
                     <aside data-markdown class="notes">
-                        - You will have seen a common theme in the previous lessons
-                        - Differences of understanding or priority can create conflict with data providers
-                        - Data providers understand intimately the impact of data disclosure
+                        - Data owners can have a skewed impression of risk
+                        - May ask for specific, overbearing restrictions/requirements
+                        - Often request higher security than is necessary
+                            - Again, the security maximalist approach
+                            - Why accept less than the most?
                         - They are strongly incentivised to minimise the likelihood of disclosure
-                        - They are probably not experts on TREs or the risk
-                        - We are
+                          but they are probably not experts on TREs or the risk
+                        - If you operate a TRE, *you* are an expert
+                            - Trust your experience
+                            - You shouldn't always do what you are asked
                         - In DSH:
-                            - We have found many of these tensions can be solved quite quickly in conversation
-                            - Even in cases where data providers initially set out very clear, specific requirements and did not seem open to negotiation
-                            - We try our best to inform partners what we can and can't do, what the risks are and what security is effective
-                            - This does not mean imposing our position on others, nor does it mean doing whatever a data provider asks
+                            - We have found providers who greatly overestimate the security needed
+                            - Explain how restrictions hinder work
+                            - Arrive at a more reasonable set of controls and make work more productive
                     </aside>
                 </section>
                 <section>
