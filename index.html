@@ -329,14 +329,12 @@
                 </section>
                 <section>
                     <h3>Vulnerability is not the same in a TRE</h3>
-                    <p>CVE scores don't apply well to TREs</p>
-                    <p>Even malicious code may not present a significant risk</p>
+                    <p>Even <b>malicious code</b> may not be a significant risk</p>
                     <p>Should be <b>robust to privilege escalation</b> and bad actors</p>
                     <div class="fragment custom blur">
                         <h4>In DSH</h4>
-                        <p>Data flow is blocked at an infrastructure level</p>
+                        <p>Data flow is restricted at an infrastructure level</p>
                         <p>Allow packages from CRAN and PyPI</p>
-                        <p>Read-only Git mirrors</p>
                     </div>
                     <aside data-markdown class="notes">
                         - Donald Scobbie's (EPCC) way of thinking
@@ -362,9 +360,8 @@
                     <p>May <b>distract</b> from what is important</p>
                     <div class="fragment custom blur">
                         <h4>In DSH</h4>
-                        <p><a href="https://www.dsptoolkit.nhs.uk/">Data Security and Protection Toolkit</a> (NHS)</p>
-                        <p>Interestested in <b>ISO27001</b>/ISO27000 family</p>
                         <p><b>SATRE</b></p>
+                        <p><a href="https://www.dsptoolkit.nhs.uk/">Data Security and Protection Toolkit</a> (NHS)</p>
                     </div>
                     <aside data-markdown class="notes">
                         - Data owners may ask for specific certifications
@@ -373,15 +370,15 @@
                         - Focusing your requirements for a TRE on a certification is unhelpful, and possibly dangerous.
                           It distracts from the actual essential qualities of a TRE.
                         - In DSH:
-                            - No ISO27001 (yet).
-                            - DSPT which is necessary for handling NHS data
-                                - Self-certification
-                                - Interesting experience as it was clearly designed with GP surgeries _etc._ in mind
                             - SATRE
                                 - We collaborated on creating the first "specification" for a TRE
                                 - There are a number of assessments
                                 - NHS is using SATRE to build its SDE specification (hopefully they contribute back!)
                             - Work with data providers, explaining what we do and what risks there are.
+                            - DSPT which is necessary for handling NHS data
+                                - Self-certification
+                                - Interesting experience as it was clearly designed with GP surgeries _etc._ in mind
+                            - No ISO27001 (yet).
                     </aside>
                 </section>
                 <section>
@@ -390,9 +387,8 @@
                     <p>There is no technology to prevent disclosure</p>
                     <div class="fragment custom blur">
                         <h4>In DSH</h4>
-                        <p><b>Fairly trivial</b> data ingress</p>
-                        <p>Cannot prevent (<b>inefficient</b>) data egress</p>
                         <p>Technical controls in <b>combination</b> with policy</p>
+                        <p>User <b>training</b></p>
                     </div>
                     <aside data-markdown class="notes">
                         - There is a tendency for people to ask/imagine/wish for a technical solution to a people problem
@@ -416,7 +412,6 @@
                 <section>
                     <h3>Communication solves problems</h3>
                     <p>Data owners can have a <b>skewed impression</b> of risk</p>
-                    <p><b>Security maximalist</b> approach</p>
                     <p>If you run a TRE, <b>you are</b> an expert</p>
                     <div class="fragment custom blur">
                         <h4>In DSH</h4>
