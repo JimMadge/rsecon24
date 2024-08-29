@@ -60,6 +60,7 @@
                             - Medical data
                             - Administrative data
                             - Financial data
+                        - **LINK:** But using sensitive data can be difficult
                     </aside>
                 </section>
                 <section>
@@ -70,21 +71,19 @@
                     </figure>
                     <aside data-markdown class="notes">
                         - Sensitive data may be unavailable for research
-                          because of (absolutely justified) privacy and security concerns
-                        - We could miss the benefits of research using that data
+                        - (absolutely justified) privacy and security concerns
+                        - Without a solution, we could miss the benefits of research using that data
                         - TREs are a solution to that conflict
-                        - More secure than sharing data with individuals/teams
-                            - Can't leave a TRE on the train
-                            - Potential for standards and accreditation
+                        - Compared to sending data to researchers
+                            - Prevents unauthorised disclosure
                             - Trust is more distributed (enables 5 safes)
-                        - **However**
-                        - Should provide tools to help researchers work effectively
+                        - **However**, should provide tools to help researchers work effectively
                             - Link to rest of talk
                             - What does that look like?
                             - Sometimes TREs focus on security at the expense of
-                                - productivity
-                                - reproducibility
-                                - effectiveness
+                                - Productivity
+                                - Reproducibility
+                                - Effectiveness
                     </aside>
                 </section>
                 <section>
@@ -95,7 +94,7 @@
                     <aside data-markdown class="notes">
                         - Introduction to our TRE project, DSH
                         - Talk about attitudes to working with sensitive data
-                          Perhaps dispel some myths
+                            - Perhaps dispel some myths
                         - Share some lessons from our experience developing and managing TREs
                         - Look at some highlights of how we enable effective research in DSH
                     </aside>
@@ -109,11 +108,9 @@
                     <aside data-markdown class="notes">
                         - Data science hackathon using sensitive data in 2017
                         - Poor experience with existing TRE
-                            - Lack of built-in essential software
+                            - Lack essential software from the outset
                             - Work delayed during software request process
-                            - Difficult to be productive
-                            - Hampered achievements
-                        - First event run with DSH beta in 2018
+                            - Difficult to be productive, hampered achievements
                     </aside>
                 </section>
                 <section>
@@ -127,11 +124,11 @@
                             To <b>balance</b> security with <b>productivity</b>.
                         </blockquote>
                         <aside data-markdown class="notes">
-                            - Original goal, based on poor experience
-                            - To create an environment we could use for world class data science
+                            - Original goal
                             - Achieving this meant finding a better balance between security and productivity
                             - We were solving our own problem initially
-                              Being able to run events and conduct our research
+                                - Being able to run events and conduct our research
+                            - First event run with DSH beta in 2018
                         </aside>
                     </section>
                     <section>
@@ -176,9 +173,8 @@
                     </figure>
                     <aside data-markdown class="notes">
                         - Open documentation and processes
+                            - Because a TRE is not just the code or infrastructure
                             - Can be used and adapted by others
-                            - A TRE is not just the code or infrastructure
-                              You also need policies and processes
                         - Papers
                             - Influential architecture paper
                             - Informed TRE designs - Microsoft
@@ -202,8 +198,7 @@
                         - DSGs
                             - Week long hackathon style events
                             - Data providers from public and private sectors
-                        - Projects
-                            - Turing research projects
+                        - Turing research projects
                         - Used in production outside The Turing
                             - Nottingham
                             - East Midlands NHS SDE (provided by Nottingham)
@@ -239,11 +234,10 @@
                     <aside data-markdown class="notes">
                         - We need to handle sensitive data with care and respect
                         - It is therefore tempting to do everything you can do increase security
-                        - If you can improve security, why wouldn't you?
                         - However,
-                            - Not all improvements are significant (security theatre)
+                            - Not all changes are significant (security theatre)
                                 - _e.g._ periodic password reset
-                            - These improvements may hamper work
+                            - Some may hamper work
                             - Some may even cause more harm than good
                                 - Extra maintenance burden
                                 - Extra admin burden
@@ -259,7 +253,6 @@
                     <aside data-markdown class="notes">
                         - **You cannot eliminate risk**
                         - Every piece of work starts with a negotiation about what _acceptable_ risk is
-                        - Remember, there is value to the work otherwise you wouldn't do it at all
                         - You need to balance the value of the outputs with the risk of disclosure
                     </aside>
                 </section>
@@ -284,47 +277,7 @@
                         - In DSH:
                             - We have created a set of tiers which apply to workpackages of different sensitivities
                             - These tiers work for us, but others will likely want to establish a different set
-                            - Tiers correspond to sets of technical controls
-                    </aside>
-                </section>
-                <section>
-                    <h3>Egress is more dangerous than ingress</h3>
-                    <p>New data can <b>elevate risk</b></p>
-                    <p>Top priority: prevent <b>unapproved data egress</b></p>
-                    <div class="fragment custom blur">
-                        <h4>In DSH</h4>
-                        <p>Balanced controls to prevent unauthorised data egress</p>
-                        <p>Moving towards easier data ingress routes</p>
-                    </div>
-                    <aside data-markdown class="notes">
-                        - Bringing data in could elevate risk/sensitivity (for example a key to reidentify individuals in a psuedonymised data set)
-                        - However, introducing data can benefit research
-                          Avoids rewriting code
-                        - Fundamentally, you want to prevent unapproved data disclosure
-                        - However, if your environment is secure, the disclosure is extremely limited (to only people with access)
-                        - You can distribute risk following the 5 Safes framework
-                        - In DSH:
-                            - We set out expectations for users training and behaviour
-                              We share this in our open documentation
-                            - We have been moving to better support ingress of data researchers need, particularly code.
-                    </aside>
-                </section>
-                <section>
-                    <h3>Plan ahead</h3>
-                    <p>Outputs <b>must be checked</b></p>
-                    <p>No outputs means <b>wasted time/money</b></p>
-                    <div class="fragment custom blur">
-                        <h4>In DSH</h4>
-                        <p>Work package classification</p>
-                    </div>
-                    <aside data-markdown class="notes">
-                        - Because outputs might disclose sensitive data, they must be checked
-                        - This is particularly difficult in AI/ML.
-                          How can we ensure a model doesn't disclose sensitive data?
-                        - If you reach the end of a piece of work but can't release the outputs, it was a waste of time and money.
-                        - In DSH:
-                            - We define (holistic) work packages, which are not just input data but _all_ input data and the intended outputs
-                            - Assess risk in advance to avoid surprises (maybe this is a different lesson, plan ahead?)
+                            - Tiers correspond to sets of security controls
                     </aside>
                 </section>
                 <section>
@@ -339,19 +292,60 @@
                     <aside data-markdown class="notes">
                         - Donald Scobbie's (EPCC) way of thinking
                         - Existing ways of assessing threat like CVE don't apply well to TREs
-                        - Network exploits, for example, are likely of no concern as there will be no way to use them
-                        - Bringing in malicious code isn't much of a concern if the worst you can do is trash your workspace
+                            - For example, network exploits are likely of no concern as there will be no way to use them
+                            - Bringing in malicious code isn't much of a concern if the worst you can do is trash your workspace
                         - A TRE should be robust to privilege escalation and bad actors
                         - In DSH:
-                            - Originally created (limited) mirrors of CRAN and PyPI
-                            - We allow packages from CRAN/PyPI proxy and git mirror
                             - We take the approach that the environments should be secure to attack from inside
+                            - We allow packages from CRAN/PyPI proxy and git mirror
                             - Network is restricted at an infrastructure level
                             - Even privilege escalation does not allow data egress
                         - Lesson:
                             - There should be no trade off between usability and security here
                             - If your TRE is secure, you shouldn't be particularly worried about malicious code inside the environment
                             - At worst it should only cause loss of time/availability (backups, redundancy, reproducible deployments)
+                    </aside>
+                </section>
+                <section>
+                    <h3>Egress is more dangerous than ingress</h3>
+                    <p>New data can <b>elevate risk</b></p>
+                    <p>Top priority: prevent <b>unapproved data egress</b></p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Balanced controls to prevent unauthorised data egress</p>
+                        <p>Moving towards easier data ingress routes</p>
+                    </div>
+                    <aside data-markdown class="notes">
+                        - Introducing data can benefit research
+                            - Avoids rewriting code
+                            - Saves time
+                            - Encourages reproducibility
+                        - But, Bringing data in could elevate risk/sensitivity (for example a key to reidentify individuals in a psuedonymised data set)
+                        - However, if your environment is secure, the disclosure is extremely limited (to only people with access)
+                        - Fundamentally, you want to prevent unapproved data disclosure
+                            - Data ingress doesn't have to make that more likely
+                        - In DSH:
+                            - We set out expectations for users training and behaviour
+                                - We share this in our open documentation
+                            - We have been moving to better support ingress of data researchers need, particularly code.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Plan ahead</h3>
+                    <p>Outputs <b>must be checked</b></p>
+                    <p>No outputs means <b>wasted time/money</b></p>
+                    <div class="fragment custom blur">
+                        <h4>In DSH</h4>
+                        <p>Work package classification</p>
+                    </div>
+                    <aside data-markdown class="notes">
+                        - Because outputs might disclose sensitive data, they must be checked
+                        - This is particularly difficult in AI/ML.
+                            - How can we ensure a model doesn't disclose sensitive data?
+                        - If you reach the end of a piece of work but can't release the outputs, it was a waste of time and money.
+                        - In DSH:
+                            - We define (holistic) work packages, which are not just input data but _all_ input data and the intended outputs
+                            - Assess risk in advance to avoid surprises (maybe this is a different lesson, plan ahead?)
                     </aside>
                 </section>
                 <section>
@@ -365,20 +359,22 @@
                     </div>
                     <aside data-markdown class="notes">
                         - Data owners may ask for specific certifications
-                        - These are often a good sign of following best practice
-                        - However, they do not constitute a guarantee of security and they do not ensure the kinds of processes/controls necessary for a safe TRE
-                        - Focusing your requirements for a TRE on a certification is unhelpful, and possibly dangerous.
-                          It distracts from the actual essential qualities of a TRE.
+                            - These are often a good sign of following best practice
+                            - However
+                                - they do not guarantee security
+                                - they do not ensure the kinds of processes/controls necessary for a safe TRE
+                        - Focusing your requirements for a TRE on a certification is unhelpful, and possibly dangerous
+                            - It may distract from the actual essential qualities of a TRE
                         - In DSH:
                             - SATRE
                                 - We collaborated on creating the first "specification" for a TRE
                                 - There are a number of assessments
                                 - NHS is using SATRE to build its SDE specification (hopefully they contribute back!)
-                            - Work with data providers, explaining what we do and what risks there are.
+                            - Work with data providers, explaining what we do and what risks there are
                             - DSPT which is necessary for handling NHS data
                                 - Self-certification
                                 - Interesting experience as it was clearly designed with GP surgeries _etc._ in mind
-                            - No ISO27001 (yet).
+                            - Investigating ISO27001
                     </aside>
                 </section>
                 <section>
@@ -394,14 +390,17 @@
                         - There is a tendency for people to ask/imagine/wish for a technical solution to a people problem
                         - Ultimately, we cannot prevent disclosure with technology
                         - _e.g._
-                            - Egress is trivial using a camera
-                            - Egress is trivial using a pen and paper
-                            - In some cases egress is trivial by taking screenshots (this could be automated)
-                            - Ingress is trivial using keyboard macros/rubber ducky
+                            - Egress is trivial
+                                - camera
+                                - pen and paper
+                                - screenshots (automated)
+                            - Ingress is trivial
+                                - keyboard macros/rubber ducky
                                 - Demonstration using Keybow2040
-                            - Ingress is trivial by typing out documents
-                            - Ingress is trivial by memorisation
-                        - It is completely reasonable to use other controls when a technical solution is impossible, **and** when it is impractical or comes at the cost of usability.
+                                - typing out documents
+                        - Use non-technical controls when
+                            - There is no technical solution
+                            - **and** when a technical solution is impractical/expensive
                         - Think back to the five safes, safe people, safe policies
                         - In DSH:
                             - We use both policy and technical controls
@@ -420,17 +419,14 @@
                     </div>
                     <aside data-markdown class="notes">
                         - Data owners can have a skewed impression of risk
-                        - May ask for specific, overbearing restrictions/requirements
-                        - Often request higher security than is necessary
-                            - Again, the security maximalist approach
-                            - Why accept less than the most?
-                        - They are strongly incentivised to minimise the likelihood of disclosure
-                          but they are probably not experts on TREs or the risk
+                            - May ask for specific, overbearing restrictions/requirements
+                            - Often request higher security than is necessary (maximalist)
+                            - They are strongly incentivised to minimise the likelihood of disclosure
                         - If you operate a TRE, *you* are an expert
                             - Trust your experience
                             - You shouldn't always do what you are asked
                         - In DSH:
-                            - We have found providers who greatly overestimate the security needed
+                            - We have collaborators who greatly overestimated the security needed
                             - Explain how restrictions hinder work
                             - Arrive at a more reasonable set of controls and make work more productive
                     </aside>
@@ -497,17 +493,15 @@
                     </table>
                     <aside data-markdown class="notes">
                         - Workspace includes important packages for research/data science
-                        - Provide all users with tools we expect they may need
-                        - Avoid slowdown due to common requests
+                        - Avoid slowdown due to common requests and installation
                         - Categories
                             - Programming languages
                             - IDEs/editors/development tools
                             - Document writing
                             - Services
                         - In the future may break out into bureau
-                          - For higher security environments,
-                            updates can be supported through replacing VM image with the latest automatic builds
-                        - Link: what about supporting important data science repositories?
+                          - For higher security environments, updates can be supported through replacing VM image with the latest automatic builds
+                        - **Link**: what about supporting important software repositories?
                     </aside>
                 </section>
                 <section>
@@ -523,7 +517,7 @@
                             - Data analysis
                             - Modelling
                             - ML
-                        - Configurable, any package or only those from an allow list
+                        - Configurable: any package or only those from an allow list
                         - Achieved by managing a Sonatype Nexus instance
                         - Split off into a standalone project
                             - Container image can be used by others
@@ -537,9 +531,11 @@
                             <figcaption>Code Publication by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                         </figure>
                         <aside data-markdown class="notes">
-                            - Removes restrictions on development
-                            - Better enables best practice (open source, version control, CI)
-                            - Prevents code outputs of research being lost or stuck inside TREs
+                            - Encourage users to develop their tools, analysis outside the TRE
+                            - Bring into the TRE to run against the sensitive data
+                                - Enables researchers to use their preferred tools
+                                - Better enables best practice (open source, version control, CI)
+                                - Prevents code outputs of research being lost or stuck inside TREs
                         </aside>
                     </section>
                     <section>
@@ -549,9 +545,10 @@
                             <!-- <figcaption></figcaption> -->
                         </figure>
                         <aside data-markdown class="notes">
-                            - Implemenation
-                                - Gitea
+                            - Implementation
+                                - Gitea instance
                                 - Function apps to interact with Gitea API
+                                - Potential for management system for requests (researchers, admins)
                             - And
                                 - As always, this is in the open
                                 - Tracked in our milestones and project roadmap
@@ -596,7 +593,6 @@
                     </section>
                     <aside data-markdown class="notes">
                         - Current DSH team members
-                        - Former DSH team members
                         - All DSH contributors
                         - TRESA
                         - Scriberia
@@ -617,15 +613,6 @@
                     <i class="fa-solid fa-people-group"></i><a href="https://uktre.org"><code>uktre.org</code></a></br>
                     <i class="fa-solid fa-circle-check"></i><a href="https://satre-specification.readthedocs.io"><code>satre-specification.readthedocs.io</code></a>
                     <aside data-markdown class="notes">
-                        - DSH GH + docs
-                        - TRESA docs
-                        - Nexus allowlist
-                        - Apricot
-                        - Bureau?
-                        - GitHub
-                        - UK TRE packages
-                        - SATRE
-                        - UK TRE
                     </aside>
                 </section>
             </div>
