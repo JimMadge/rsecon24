@@ -64,6 +64,7 @@
                             - Medical data
                             - Administrative data
                             - Financial data
+                        - If we don't use it, we loose the benefits
                         - **LINK:** But using sensitive data can be difficult
                     </aside>
                 </section>
@@ -74,15 +75,13 @@
                         <figcaption>Sensitive Data by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                     </figure>
                     <aside data-markdown class="notes">
-                        - Sensitive data may be unavailable for research
-                        - (absolutely justified) privacy and security concerns
-                        - Without a solution, we could miss the benefits of research using that data
+                        - Justified privacy and security concerns
                         - TREs are a solution to that conflict
+                            - Make more sensitive data available for research
                         - Compared to sending data to researchers
                             - Prevents unauthorised disclosure
                             - Trust is more distributed (enables 5 safes)
-                        - **However**, should provide tools to help researchers work effectively
-                            - Link to rest of talk
+                        - **LINK: ****However**, should provide tools to help researchers work effectively
                             - What does that look like?
                             - Sometimes TREs focus on security at the expense of
                                 - Productivity
@@ -110,7 +109,7 @@
                         <figcaption>Error Management by Scriberia, modified. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
                     </figure>
                     <aside data-markdown class="notes">
-                        - Data science hackathon using sensitive data in 2017
+                        - Turing data science hackathon using sensitive data in 2017
                         - Poor experience with existing TRE
                             - Lack essential software from the outset
                             - Work delayed during software request process
@@ -124,15 +123,17 @@
                             To create an environment we could <b>use</b> for <b>world class data science</b>.
                         </blockquote>
                         </br>
-                        <blockquote>
-                            To <b>balance</b> security with <b>productivity</b>.
-                        </blockquote>
+                        <div class="fragment custom blur">
+                            <blockquote>
+                                To <b>balance</b> security with <b>productivity</b>.
+                            </blockquote>
+                        </div>
                         <aside data-markdown class="notes">
-                            - Original goal
+                            - Project started with this original goal
                             - Achieving this meant finding a better balance between security and productivity
-                            - We were solving our own problem initially
-                                - Being able to run events and conduct our research
                             - First event run with DSH beta in 2018
+                            - **LINK:** We were solving our own problem initially
+                                - Being able to run events and conduct our research
                         </aside>
                     </section>
                     <section>
@@ -147,6 +148,8 @@
                                 - Through the design of our work
                                 - But also through contribution to community projects
                             - North star
+                            - **LINK:** Practically, what do we do?
+                                - Three aspects…
                         </aside>
                     </section>
                 </section>
@@ -159,12 +162,13 @@
                     </figure>
                     <aside data-markdown class="notes">
                         - Open source IAC defined TRE
-                            - reproducible
-                            - configurable
+                            - reproducible deployments
+                            - configurable environments
                         - Tiered access controls
-                            - Can be used for open, non-sensitive data
-                            - Can be used for anonymised medical data
-                            - Tier for identifiable medical data, though we don't handle it
+                            - 0–1 open, non-sensitive data
+                            - 2 low risk sensitive data
+                            - 3 high risk sensitive date _e.g._ anonymised medical data
+                            - 4 very high risk _e.g._ identifiable medical data, though we don't handle it
                         - Remote desktop interface through a browser
                             - Can be used on site or remotely
                     </aside>
@@ -183,7 +187,7 @@
                             - Influential architecture paper
                             - Informed TRE designs - Microsoft
                             - Influenced organisations - AWS, DARE UK
-                        - SATRE
+                        - Collaborations, _e.g._ SATRE
                             - Project in collaboration between Turing, Dundee, UCL, RDS, HIC, Lay participants
                             - Building an open standard for TREs
                             - Now influencing NHS SDE requirements
@@ -238,10 +242,11 @@
                     <aside data-markdown class="notes">
                         - We need to handle sensitive data with care and respect
                         - It is therefore tempting to do everything you can do increase security
+                            - This is the security maximalist approach
                         - However,
                             - Not all changes are significant (security theatre)
                                 - _e.g._ periodic password reset
-                            - Some may hamper work
+                            - Some may hamper research
                             - Some may even cause more harm than good
                                 - Extra maintenance burden
                                 - Extra admin burden
@@ -301,13 +306,11 @@
                         - A TRE should be robust to privilege escalation and bad actors
                         - In DSH:
                             - We take the approach that the environments should be secure to attack from inside
-                            - We allow packages from CRAN/PyPI proxy and git mirror
+                            - We allow researchers to install packages from CRAN/PyPI themselves
                             - Network is restricted at an infrastructure level
                             - Even privilege escalation does not allow data egress
                         - Lesson:
-                            - There should be no trade off between usability and security here
-                            - If your TRE is secure, you shouldn't be particularly worried about malicious code inside the environment
-                            - At worst it should only cause loss of time/availability (backups, redundancy, reproducible deployments)
+                            - There doesn't have to be a trade off between usability and security here
                     </aside>
                 </section>
                 <section>
@@ -316,21 +319,21 @@
                     <p>Top priority: prevent <b>unapproved data egress</b></p>
                     <div class="fragment custom blur">
                         <h4>In DSH</h4>
-                        <p><b>Balanced controls</b> to prevent unauthorised data egress</p>
+                        <!-- <p><b>Balanced controls</b> to prevent unauthorised data egress</p> -->
                         <p>Moving towards easier <b>data ingress</b> routes</p>
                     </div>
                     <aside data-markdown class="notes">
-                        - Introducing data can benefit research
-                            - Avoids rewriting code
-                            - Saves time
+                        - Introducing data (particularly code) can benefit research
+                            - Avoids duplication
                             - Encourages reproducibility
-                        - But, Bringing data in could elevate risk/sensitivity (for example a key to reidentify individuals in a psuedonymised data set)
-                        - However, if your environment is secure, the disclosure is extremely limited (to only people with access)
+                        - But, Bringing data in could elevate risk/sensitivity
+                            - _e.g._ example a key to reidentify individuals in a psuedonymised data set
+                        - If your environment is secure, the disclosure is extremely limited (to only people with access)
                         - Fundamentally, you want to prevent unapproved data disclosure
                             - Data ingress doesn't have to make that more likely
                         - In DSH:
-                            - We set out expectations for users training and behaviour
-                                - We share this in our open documentation
+                            <!-- - Balanced controls including expectations for users training and behaviour -->
+                            <!--     - We share this in our open documentation -->
                             - We have been moving to better support ingress of data researchers need, particularly code.
                     </aside>
                 </section>
@@ -372,12 +375,8 @@
                         - In DSH:
                             - SATRE
                                 - We collaborated on creating the first "specification" for a TRE
-                                - There are a number of assessments
-                                - NHS is using SATRE to build its SDE specification (hopefully they contribute back!)
-                            - Work with data providers, explaining what we do and what risks there are
+                                - Identifying what the essential qualities of a TRE are
                             - DSPT which is necessary for handling NHS data
-                                - Self-certification
-                                - Interesting experience as it was clearly designed with GP surgeries _etc._ in mind
                             - Investigating ISO27001
                     </aside>
                 </section>
@@ -408,8 +407,10 @@
                         - Think back to the five safes, safe people, safe policies
                         - In DSH:
                             - We use both policy and technical controls
-                            - We make our approach open through DSH documentation, and the documentation of our production TRE service
-                            - We are happy for others to use, modify, contribute to these
+                                - User training
+                                - Users understand their responsibilities and the potential harms
+                            - Openly published documentation for production processes
+                                - We are happy for others to use, modify, contribute to these
                     </aside>
                 </section>
                 <section>
@@ -497,15 +498,16 @@
                     </table>
                     <aside data-markdown class="notes">
                         - Workspace includes important packages for research/data science
-                        - Avoid slowdown due to common requests and installation
+                            - Tools for productivity
+                            - Avoid slowdown due to common requests and installation
                         - Categories
                             - Programming languages
                             - IDEs/editors/development tools
                             - Document writing
                             - Services
-                        - In the future may break out into bureau
-                          - For higher security environments, updates can be supported through replacing VM image with the latest automatic builds
-                        - **Link**: what about supporting important software repositories?
+                        <!-- - In the future may break out into bureau -->
+                        <!--   - For higher security environments, updates can be supported through replacing VM image with the latest automatic builds -->
+                        - **LINK**: what about supporting important software repositories?
                     </aside>
                 </section>
                 <section>
@@ -537,6 +539,7 @@
                         <aside data-markdown class="notes">
                             - Encourage users to develop their tools, analysis outside the TRE
                             - Bring into the TRE to run against the sensitive data
+                            - Why?
                                 - Enables researchers to use their preferred tools
                                 - Better enables best practice (open source, version control, CI)
                                 - Prevents code outputs of research being lost or stuck inside TREs
@@ -557,7 +560,7 @@
                                 - As always, this is in the open
                                 - Tracked in our milestones and project roadmap
                                 - Policies/processes are shared
-                                - Worked with users in Nottingham to help understand if our ideas would meet their needs
+                                <!-- - Worked with users in Nottingham to help understand if our ideas would meet their needs -->
                         </aside>
                     </section>
                 </section>
@@ -572,7 +575,7 @@
                         </figure>
                     </section>
                     <section>
-                        <p>Current team</p>
+                        <p>Development Team</p>
                         <!-- Martin O'Reilly -->
                         <img src="static/martin.jpg" height="150">
                         <!-- Kirstie Whitaker -->
