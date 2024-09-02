@@ -69,7 +69,7 @@
                     </aside>
                 </section>
                 <section>
-                    <h3>Why TREs?</h3>
+                    <h3>Why trusted research environments?</h3>
                     <figure>
                         <img src="static/sensitive-data.jpg" width="65%">
                         <figcaption>Sensitive Data by Scriberia. Used under CC-BY 4.0 <a href="https://doi.org/10.5281/zenodo.8169292">10.5281/zenodo.8169292</a></figcaption>
@@ -164,6 +164,8 @@
                         - Open source IAC defined TRE
                             - reproducible deployments
                             - configurable environments
+                        - Automated deployment from command line, very few manual steps
+                        - v5.0.0 released recently, available on pypi
                         - Tiered access controls
                             - 0–1 open, non-sensitive data
                             - 2 low risk sensitive data
@@ -251,6 +253,7 @@
                                 - Extra maintenance burden
                                 - Extra admin burden
                                 - Loss of productivity
+                        - **LINK:** The reality is…
                     </aside>
                 </section>
                 <section>
@@ -263,6 +266,7 @@
                         - **You cannot eliminate risk**
                         - Every piece of work starts with a negotiation about what _acceptable_ risk is
                         - You need to balance the value of the outputs with the risk of disclosure
+                        - **LINK:** now I'm going to share some lessons we've learned trying to reach that balance
                     </aside>
                 </section>
                 <section>
@@ -276,13 +280,14 @@
                     <p><b>No single security configuration</b> for all work</p>
                     <p>One configuration = <b>the most strict</b></p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p>Set of <b>security tiers</b> with <b>technical and policy controls</b></p>
                     </div>
                     <aside data-markdown class="notes">
                         - There is no single set of security rules suitable for all work
-                        - If you only have one, it will be for the most sensitive data you handle
-                        - Everyone else will suffer from unnecessary restrictions
+                        - If you only have one, it *must* be designed for the riskiest work you conduct
+                        - That means, all other work will suffer from unnecessary restrictions
+                        - That might encourage bending/subverting the rules
                         - In DSH:
                             - We have created a set of tiers which apply to workpackages of different sensitivities
                             - These tiers work for us, but others will likely want to establish a different set
@@ -294,7 +299,7 @@
                     <p>Even <b>malicious code</b> may not be a significant risk</p>
                     <p>Should be <b>robust to privilege escalation</b> and bad actors</p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p>Data flow is restricted at the <b>infrastructure level</b></p>
                         <p>Allow packages from <b>CRAN and PyPI</b></p>
                     </div>
@@ -318,8 +323,7 @@
                     <p>New data can <b>elevate risk</b></p>
                     <p>Top priority: prevent <b>unapproved data egress</b></p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
-                        <!-- <p><b>Balanced controls</b> to prevent unauthorised data egress</p> -->
+                        <h4>In data safe haven</h4>
                         <p>Moving towards easier <b>data ingress</b> routes</p>
                     </div>
                     <aside data-markdown class="notes">
@@ -332,8 +336,6 @@
                         - Fundamentally, you want to prevent unapproved data disclosure
                             - Data ingress doesn't have to make that more likely
                         - In DSH:
-                            <!-- - Balanced controls including expectations for users training and behaviour -->
-                            <!--     - We share this in our open documentation -->
                             - We have been moving to better support ingress of data researchers need, particularly code.
                     </aside>
                 </section>
@@ -342,7 +344,7 @@
                     <p>Outputs <b>must be checked</b></p>
                     <p>No outputs means <b>wasted time/money</b></p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p><b>Work package</b> classification</p>
                     </div>
                     <aside data-markdown class="notes">
@@ -360,7 +362,7 @@
                     <p>Certifications <b>don't</b> make a system a TRE</p>
                     <p>May <b>distract</b> from what is important</p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p><b>SATRE</b></p>
                         <p><a href="https://www.dsptoolkit.nhs.uk/">Data Security and Protection Toolkit</a> (NHS)</p>
                     </div>
@@ -385,7 +387,7 @@
                     <p><b>Technical</b> solutions for a <b>people</b> problem</p>
                     <p>There is no technology to prevent disclosure</p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p>Technical controls in <b>combination</b> with policy</p>
                         <p>User <b>training</b></p>
                     </div>
@@ -418,7 +420,7 @@
                     <p>Data owners can have a <b>skewed impression</b> of risk</p>
                     <p>If you run a TRE, <b>you are</b> an expert</p>
                     <div class="fragment custom blur">
-                        <h4>In DSH</h4>
+                        <h4>In data safe haven</h4>
                         <p>Explain the trade off between <b>security</b> and <b>productivity</b></p>
                         <p>Aim to find a good <b>balance</b></p>
                     </div>
@@ -505,8 +507,6 @@
                             - IDEs/editors/development tools
                             - Document writing
                             - Services
-                        <!-- - In the future may break out into bureau -->
-                        <!--   - For higher security environments, updates can be supported through replacing VM image with the latest automatic builds -->
                         - **LINK**: what about supporting important software repositories?
                     </aside>
                 </section>
