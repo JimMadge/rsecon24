@@ -49,6 +49,12 @@
                     <h2>Building a Secure and Productive TRE: How I Learned to Stop Worrying and Proxy PyPI</h2>
                     <p>Jim Madge</p>
                     <p>Alan Turing Institute</p>
+                    <aside data-markdown class="notes">
+                        - Who I am
+                        - Trusted research environments
+                        - DSH for about four years
+                        - **LINK:** Where we begin, why use sensitive data?
+                    </aside>
                 </section>
                 <!-- Pitch -->
                 <section>
@@ -77,16 +83,17 @@
                     <aside data-markdown class="notes">
                         - Justified privacy and security concerns
                         - TREs are a solution to that conflict
+                            - Secure environments with controls to prevent unauthorised data egress
                             - Make more sensitive data available for research
                         - Compared to sending data to researchers
                             - Prevents unauthorised disclosure
                             - Trust is more distributed (enables 5 safes)
-                        - **LINK: ****However**, should provide tools to help researchers work effectively
-                            - What does that look like?
+                        - **LINK:** **However**, should provide tools to help researchers work effectively
                             - Sometimes TREs focus on security at the expense of
                                 - Productivity
                                 - Reproducibility
                                 - Effectiveness
+                            - What does the right balance look like?
                     </aside>
                 </section>
                 <section>
@@ -165,7 +172,6 @@
                             - reproducible deployments
                             - configurable environments
                         - Automated deployment from command line, very few manual steps
-                        - v5.0.0 released recently, available on pypi
                         - Tiered access controls
                             - 0–1 open, non-sensitive data
                             - 2 low risk sensitive data
@@ -173,6 +179,7 @@
                             - 4 very high risk _e.g._ identifiable medical data, though we don't handle it
                         - Remote desktop interface through a browser
                             - Can be used on site or remotely
+                        - v5.0.0 released recently, available on pypi
                     </aside>
                 </section>
                 <section>
@@ -313,7 +320,7 @@
                             - We take the approach that the environments should be secure to attack from inside
                             - We allow researchers to install packages from CRAN/PyPI themselves
                             - Network is restricted at an infrastructure level
-                            - Even privilege escalation does not allow data egress
+                            - Even privilege escalation does not allow data exfiltration
                         - Lesson:
                             - There doesn't have to be a trade off between usability and security here
                     </aside>
